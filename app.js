@@ -327,3 +327,28 @@ function resetAdminForm() {
 window.onload = function() {
     checkStudentSession();
 };
+// Đường dẫn Mock API của bạn
+const API_URL = "http://localhost:3000/questions";
+
+// Hàm gọi API để lấy danh sách câu hỏi
+function getQuestions() {
+    fetch(API_URL)
+        .then(response => {
+            // Chuyển đổi dữ liệu nhận được sang dạng JSON
+            return response.json();
+        })
+        .then(data => {
+            // Dữ liệu câu hỏi thật từ db.json sẽ nằm ở đây
+            console.log("Danh sách câu hỏi:", data);
+            
+            // Ví dụ: Bạn có thể viết tiếp hàm hiển thị câu hỏi lên giao diện tại đây
+            // renderQuiz(data);
+        })
+        .catch(error => {
+            // Xử lý nếu chẳng may lỗi mạng hoặc server sập
+            console.error("Lỗi khi lấy dữ liệu:", error);
+        });
+}
+
+// Chạy hàm test thử
+getQuestions();

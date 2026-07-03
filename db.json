@@ -1,0 +1,6 @@
+{
+  "questions": [
+    { "id": "1", "title": "1 + 1 bằng mấy?", "answer": "2" },
+    { "id": "2", "title": "Thủ đô của Việt Nam là gì?", "answer": "Hà Nội" }
+  ]
+}
